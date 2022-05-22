@@ -4,25 +4,155 @@
 <head>
 	<title>AVUS</title>
 	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=block" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=block" rel="stylesheet"> -->
 	<meta charset="UTF-8">
 	<meta name="author" content="Christian Erickson [C_E]">
 	<meta name="keywords" content="avus, art, animation, music">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<style>
-		* {
-			background-color: rgb(128, 128, 128);
-			border: none;
-			margin: 0%;
-		}
-	</style>
 </head>
 
-<body>
-	<iframe width="512" height="512" allowfullscreen
-		src="https://www.youtube.com/embed/02a-LFcxJHs?modestbranding=1&rel=0">
-	</iframe>
-	</iframe>
+<body class="dark">
+	<button class="theme" id="button-switch-theme" type="button" onclick="switchTheme()">🌚</button>
+
+	<header>
+		<button class="logo" type="button">
+			<img class="logo" id="button-logo" src="images/avus_512.png">
+		</button>
+		<h1 style="position: relative; left: 50%; transform: translate(-50%, 0%); color: transparent">C_E</h1>
+		<h1 class="red-dark">C_E</h1>
+		<h1 class="green-dark">C_E</h1>
+		<h1 class="blue-dark">C_E</h1>
+	</header>
+
+	<section class="dark-1">
+		<h2 class="dark">Animations</h2>
+		<iframe class="youtube dark" allowfullscreen
+			src="https://www.youtube.com/embed/02a-LFcxJHs?modestbranding=1&rel=0">
+		</iframe>
+		<iframe class="youtube dark" allowfullscreen
+			src="https://www.youtube.com/embed/OrBsZTEbHXg?modestbranding=1&rel=0">
+		</iframe>
+	</section>
+
+	<section class="dark-2">
+		<h2 class="dark">Music</h2>
+		<iframe class="soundcloud dark"
+			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1272896140&visual=true&hide_related=true&show_teaser=false"></iframe>
+		<iframe class="soundcloud dark"
+			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1272896656&visual=true&hide_related=true&show_teaser=false"></iframe>
+		<iframe class="soundcloud dark"
+			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1272900109&visual=true&hide_related=true&show_teaser=false"></iframe>
+		<iframe class="soundcloud dark"
+			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1267416727&visual=true&hide_related=true&show_teaser=false"></iframe>
+		<iframe class="soundcloud dark"
+			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1272883249&visual=true&hide_related=true&show_teaser=false"></iframe>
+	</section>
+
+	<section class="dark-1">
+		<h2 class="dark">Pictures</h2>
+		<a target="_blank" rel="noreferrer" href="https://twitter.com/DisturbTheBirds/status/1523735591241740288">
+			<img class="picture dark" src="https://pbs.twimg.com/media/FSVlNQOVgAEiFA0?format=jpg&name=small">
+			<img class="picture dark" src="https://pbs.twimg.com/media/FSVlZCcUUAAM831?format=jpg&name=small">
+		</a>
+		<a target="_blank" rel="noreferrer" href="https://twitter.com/DisturbTheBirds/status/1523735626364772352">
+			<img class="picture dark" src="https://pbs.twimg.com/media/FSVld2lVkAAxHWm?format=jpg&name=small">
+			<img class="picture dark" src="https://pbs.twimg.com/media/FSVld3WUUAA81Uc?format=jpg&name=small">
+		</a>
+		<a target="_blank" rel="noreferrer" href="https://twitter.com/DisturbTheBirds/status/1524265375822610434">
+			<img class="picture dark" src="https://pbs.twimg.com/media/FSdHQt4VIAEVp8d?format=jpg&name=small">
+			<img class="picture dark" src="https://pbs.twimg.com/media/FSdHRZkVcAEvptg?format=jpg&name=small">
+		</a>
+	</section>
+
+	<footer class="dark-2">
+		<h2 class="dark">About</h2>
+	</footer>
+
+	<script>
+		function switchTheme() {
+			if (document.body.classList.contains("dark")) {
+				document.body.classList.add("light");
+				document.body.classList.remove("dark");
+
+				document.getElementById("button-logo").src = "images/avus_inv_512.png";
+				document.getElementById("button-switch-theme").textContent = "🌞";
+
+				let elements = document.getElementsByClassName("dark");
+				for (; elements.length;) {
+					elements[0].classList.add("light");
+					elements[0].classList.remove("dark");
+				}
+				elements = document.getElementsByClassName("dark-1");
+				for (; elements.length;) {
+					elements[0].classList.add("light-1");
+					elements[0].classList.remove("dark-1");
+				}
+				elements = document.getElementsByClassName("dark-2");
+				for (; elements.length;) {
+					elements[0].classList.add("light-2");
+					elements[0].classList.remove("dark-2");
+				}
+				elements = document.getElementsByClassName("red-dark");
+				for (; elements.length;) {
+					elements[0].classList.add("red-light");
+					elements[0].classList.remove("red-dark");
+				}
+				elements = document.getElementsByClassName("green-dark");
+				for (; elements.length;) {
+					elements[0].classList.add("green-light");
+					elements[0].classList.remove("green-dark");
+				}
+				elements = document.getElementsByClassName("blue-dark");
+				for (; elements.length;) {
+					elements[0].classList.add("blue-light");
+					elements[0].classList.remove("blue-dark");
+				}
+			}
+			else {
+				document.body.classList.add("dark");
+				document.body.classList.remove("light");
+
+				document.getElementById("button-logo").src = "images/avus_512.png";
+				document.getElementById("button-switch-theme").textContent = "🌚";
+
+				let elements = document.getElementsByClassName("light");
+				for (; elements.length;) {
+					elements[0].classList.add("dark");
+					elements[0].classList.remove("light");
+				}
+				elements = document.getElementsByClassName("light-1");
+				for (; elements.length;) {
+					elements[0].classList.add("dark-1");
+					elements[0].classList.remove("light-1");
+				}
+				elements = document.getElementsByClassName("light-2");
+				for (; elements.length;) {
+					elements[0].classList.add("dark-2");
+					elements[0].classList.remove("light-2");
+				}
+				elements = document.getElementsByClassName("red-light");
+				for (; elements.length;) {
+					elements[0].classList.add("red-dark");
+					elements[0].classList.remove("red-light");
+				}
+				elements = document.getElementsByClassName("green-light");
+				for (; elements.length;) {
+					elements[0].classList.add("green-dark");
+					elements[0].classList.remove("green-light");
+				}
+				elements = document.getElementsByClassName("blue-light");
+				for (; elements.length;) {
+					elements[0].classList.add("blue-dark");
+					elements[0].classList.remove("blue-light");
+				}
+			}
+		}
+	</script>
+
 </body>
 
 </html>
