@@ -2,17 +2,18 @@
 <html lang="en-US">
 
 <head>
-	<title>AVUS</title>
-	<link rel="icon" href="favicon.png">
+	<title>Avus | Christian Erickson</title>
+	<!-- <title>Avus | C_E - Animations</title> -->
+	<meta charset="UTF-8">
+	<meta name="author" content="Christian Erickson [C_E]">
+	<meta name="keywords" content="avus, c_e, art, animation, music">
+	<meta name="description" content="Avus Inc.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=block" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=block" rel="stylesheet"> -->
-	<meta charset="UTF-8">
-	<meta name="author" content="Christian Erickson [C_E]">
-	<meta name="keywords" content="avus, c_e, art, animation, music">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body class="dark">
@@ -20,21 +21,21 @@
 
 	<header>
 		<button class="logo" type="button">
-			<img style="width: 4vmin;" id="button-logo" src="images/avus_512.png">
+			<img id="button-logo-small" src="images/avus_512.png">
 		</button>
-		<h1 style="position: relative; left: 50%; transform: translate(-50%, 0%); color: transparent">C_E</h1>
-		<h1 class="red-dark">C_E</h1>
-		<h1 class="green-dark">C_E</h1>
-		<h1 class="blue-dark">C_E</h1>
+		<!-- FIX(C_E): No style attributes in html -->
+		<h1 onclick="cycleLogoAnimation()" style="position: relative; left: 50%; transform: translate(-50%, 0%); color: transparent">C_E</h1>
+		<!-- CHECK(C_E): Use title instead of logo? -->
+		<h1 onclick="cycleLogoAnimation()" id="logo-main-red" class="red-a6 dark red-dark">C_E</h1>
+		<h1 onclick="cycleLogoAnimation()" id="logo-main-green" class="green-a6 dark green-dark">C_E</h1>
+		<h1 onclick="cycleLogoAnimation()" id="logo-main-blue" class="blue-a6 dark blue-dark">C_E</h1>
 	</header>
 
 	<section class="dark-1">
 		<h2 class="dark">Animations</h2>
-		<iframe class="youtube dark" allowfullscreen
-			src="https://www.youtube.com/embed/02a-LFcxJHs?modestbranding=1&rel=0">
+		<iframe class="youtube dark" allowfullscreen src="https://www.youtube.com/embed/02a-LFcxJHs?modestbranding=1&rel=0">
 		</iframe>
-		<iframe class="youtube dark" allowfullscreen
-			src="https://www.youtube.com/embed/OrBsZTEbHXg?modestbranding=1&rel=0">
+		<iframe class="youtube dark" allowfullscreen src="https://www.youtube.com/embed/OrBsZTEbHXg?modestbranding=1&rel=0">
 		</iframe>
 	</section>
 
@@ -70,14 +71,12 @@
 
 	<footer class="dark-2">
 		<h2 class="dark">Christian Erickson</h2>
-		<img id="button-logo" style="width: 10vmin;" src="images/avus_512.png">
+		<img id="button-logo-big" style="width: 10vmin;" src="images/avus_512.png">
 		<a title="Twitter" target="_blank" rel="noreferrer" href="https://twitter.com/DisturbTheBirds">
 			<img class="social" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg">
 		</a>
-		<a title="YouTube" target="_blank" rel="noreferrer"
-			href="https://www.youtube.com/channel/UC2OrV8jUtdJmtpIDW2zsXZQ">
-			<img class="social"
-				src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg">
+		<a title="YouTube" target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UC2OrV8jUtdJmtpIDW2zsXZQ">
+			<img class="social" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg">
 		</a>
 		<a title="SoundCloud" target="_blank" rel="noreferrer" href="https://soundcloud.com/christian_erickson">
 			<img class="social" src="https://static.wikia.nocookie.net/logopedia/images/9/93/Soundcloud.svg">
@@ -85,12 +84,40 @@
 	</footer>
 
 	<script>
+		function cycleLogoAnimation() {
+			do {
+				if (document.getElementById("logo-main-red").classList.replace("red-a1", "red-a2")) break;
+				if (document.getElementById("logo-main-red").classList.replace("red-a2", "red-a3")) break;
+				if (document.getElementById("logo-main-red").classList.replace("red-a3", "red-a4")) break;
+				if (document.getElementById("logo-main-red").classList.replace("red-a4", "red-a5")) break;
+				if (document.getElementById("logo-main-red").classList.replace("red-a5", "red-a6")) break;
+				if (document.getElementById("logo-main-red").classList.replace("red-a6", "red-a1")) break;
+			} while (0);
+			do {
+				if (document.getElementById("logo-main-green").classList.replace("green-a1", "green-a2")) break;
+				if (document.getElementById("logo-main-green").classList.replace("green-a2", "green-a3")) break;
+				if (document.getElementById("logo-main-green").classList.replace("green-a3", "green-a4")) break;
+				if (document.getElementById("logo-main-green").classList.replace("green-a4", "green-a5")) break;
+				if (document.getElementById("logo-main-green").classList.replace("green-a5", "green-a6")) break;
+				if (document.getElementById("logo-main-green").classList.replace("green-a6", "green-a1")) break;
+			} while (0);
+			do {
+				if (document.getElementById("logo-main-blue").classList.replace("blue-a1", "blue-a2")) break;
+				if (document.getElementById("logo-main-blue").classList.replace("blue-a2", "blue-a3")) break;
+				if (document.getElementById("logo-main-blue").classList.replace("blue-a3", "blue-a4")) break;
+				if (document.getElementById("logo-main-blue").classList.replace("blue-a4", "blue-a5")) break;
+				if (document.getElementById("logo-main-blue").classList.replace("blue-a5", "blue-a6")) break;
+				if (document.getElementById("logo-main-blue").classList.replace("blue-a6", "blue-a1")) break;
+			} while (0);
+		}
+
 		function switchTheme() {
 			if (document.body.classList.contains("dark")) {
 				document.body.classList.add("light");
 				document.body.classList.remove("dark");
 
-				document.getElementById("button-logo").src = "images/avus_inv_512.png";
+				document.getElementById("button-logo-small").src = "images/avus_inv_512.png";
+				document.getElementById("button-logo-big").src = "images/avus_inv_512.png";
 				document.getElementById("button-switch-theme").textContent = "🌞";
 
 				let elements = document.getElementsByClassName("dark");
@@ -128,7 +155,8 @@
 				document.body.classList.add("dark");
 				document.body.classList.remove("light");
 
-				document.getElementById("button-logo").src = "images/avus_512.png";
+				document.getElementById("button-logo-small").src = "images/avus_512.png";
+				document.getElementById("button-logo-big").src = "images/avus_512.png";
 				document.getElementById("button-switch-theme").textContent = "🌚";
 
 				let elements = document.getElementsByClassName("light");

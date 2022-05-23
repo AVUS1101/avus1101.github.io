@@ -26,51 +26,215 @@ h1 {
 	color: transparent;
 	top: 0%;
 	left: 50%;
+	cursor: pointer;
 }
 
-@keyframes aberration-rotation {
-	from {
-		transform: translate(-50%, 0%) rotate(-2deg);
+@keyframes aberration-a1 {
+	0% {
+		transform: translate(-47%, -3%);
 	}
 
-	to {
-		transform: translate(-50%, 0%) rotate(2deg);
+	100% {
+		transform: translate(-53%, 3%);
 	}
+}
+
+@keyframes aberration-a2 {
+	0% {
+		animation-timing-function: ease-in;
+		transform: translate(-50%, 0%);
+	}
+
+	8.33% {
+		transform: translate(-48%, 3%);
+	}
+
+	12.5% {
+		transform: translate(-47%, 1.5%);
+	}
+
+	25% {
+		transform: translate(-50%, -3%);
+	}
+
+	37.5% {
+		transform: translate(-53%, 1.5%);
+	}
+
+	41.67% {
+		transform: translate(-52%, 3%);
+	}
+
+	58.33% {
+		transform: translate(-48%, -3%);
+	}
+
+	62.5% {
+		transform: translate(-47%, -1.5%);
+	}
+
+	75% {
+		transform: translate(-50%, 3%);
+	}
+
+	87.5% {
+		transform: translate(-53%, -1.5%);
+	}
+
+	91.67% {
+		transform: translate(-52%, -3%);
+	}
+
+	100% {
+		transform: translate(-50%, 0%);
+	}
+}
+
+@keyframes aberration-a3 {
+	0% {
+		transform: translate(-50%, 0%) rotate(-4deg);
+	}
+
+	100% {
+		transform: translate(-50%, 0%) rotate(4deg);
+	}
+}
+
+@keyframes aberration-a4 {
+	0% {
+		transform: translate(-50%, 0%) rotateY(-30deg) rotateZ(-2deg);
+	}
+
+	50% {
+		transform: translate(-50%, 0%);
+	}
+
+	100% {
+		transform: translate(-50%, 0%) rotateY(30deg) rotateZ(2deg);
+	}
+}
+
+@keyframes aberration-a5 {
+	0% {
+		transform: translate(-50%, 0%) skew(-10deg);
+	}
+
+	100% {
+		transform: translate(-50%, 0%) skew(10deg);
+	}
+}
+
+@keyframes aberration-a6 {
+	0% {
+		transform: translate(-50%, 0%) scale(100%);
+	}
+
+	100% {
+		transform: translate(-50%, 0%) scale(70%);
+	}
+}
+
+h1.red-a1 {
+	animation: aberration-a1 3s ease-in-out 0.5s infinite alternate both;
+}
+
+h1.green-a1 {
+	animation: aberration-a1 3s ease-in-out 1s infinite alternate both;
+}
+
+h1.blue-a1 {
+	animation: aberration-a1 3s ease-in-out 1.5s infinite alternate both;
+}
+
+h1.red-a2 {
+	animation: aberration-a2 6s linear 1s infinite alternate both;
+}
+
+h1.green-a2 {
+	animation: aberration-a2 6.5s linear 1s infinite alternate both;
+}
+
+h1.blue-a2 {
+	animation: aberration-a2 7s linear 1s infinite alternate both;
+}
+
+h1.red-a3 {
+	animation: aberration-a3 3s linear 1s infinite alternate both;
+}
+
+h1.green-a3 {
+	animation: aberration-a3 3.5s linear 1s infinite alternate both;
+}
+
+h1.blue-a3 {
+	animation: aberration-a3 4s linear 1s infinite alternate both;
+}
+
+h1.red-a4 {
+	animation: aberration-a4 4s linear 1s infinite alternate both;
+}
+
+h1.green-a4 {
+	animation: aberration-a4 4.25s linear 1s infinite alternate both;
+}
+
+h1.blue-a4 {
+	animation: aberration-a4 4.5s linear 1s infinite alternate both;
+}
+
+h1.red-a5 {
+	animation: aberration-a5 3s ease-in-out 1s infinite alternate both;
+}
+
+h1.green-a5 {
+	animation: aberration-a5 3.25s ease-in-out 1s infinite alternate both;
+}
+
+h1.blue-a5 {
+	animation: aberration-a5 3.5s ease-in-out 1s infinite alternate both;
+}
+
+h1.red-a6 {
+	animation: aberration-a6 6s ease-in-out 1s infinite alternate both;
+}
+
+h1.green-a6 {
+	animation: aberration-a6 6.25s ease-in-out 1s infinite alternate both;
+}
+
+h1.blue-a6 {
+	animation: aberration-a6 6.5s ease-in-out 1s infinite alternate both;
+}
+
+h1.dark {
+	mix-blend-mode: lighten;
+}
+
+h1.light {
+	mix-blend-mode: multiply;
 }
 
 h1.red-dark {
-	animation: aberration-rotation 3s ease-in-out 0s infinite alternate both;
-	mix-blend-mode: lighten;
 	color: #ff0000;
 }
 
 h1.green-dark {
-	transform: translate(-50%, 0%);
-	mix-blend-mode: lighten;
 	color: #00ff00;
 }
 
 h1.blue-dark {
-	animation: aberration-rotation 3s ease-in-out 0s infinite alternate-reverse both;
-	mix-blend-mode: lighten;
 	color: #0000ff;
 }
 
 h1.red-light {
-	animation: aberration-rotation 3s ease-in-out 0s infinite alternate both;
-	mix-blend-mode: multiply;
 	color: #0fffff;
 }
 
 h1.green-light {
-	transform: translate(-50%, 0%);
-	mix-blend-mode: multiply;
 	color: #ff0fff;
 }
 
 h1.blue-light {
-	animation: aberration-rotation 3s ease-in-out 0s infinite alternate-reverse both;
-	mix-blend-mode: multiply;
 	color: #ffff0f;
 }
 
@@ -133,6 +297,10 @@ button.logo {
 	position: absolute;
 	top: 0%;
 	left: 0%;
+}
+
+#button-logo-small {
+	width: 4vmin;
 }
 
 button.theme {
