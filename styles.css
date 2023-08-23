@@ -266,7 +266,7 @@ section {
 }
 
 section.dark-1 {
-	background-color: hsl(228, 10%, 8%);
+	background-color: hsl(225, 10%, 8%);
 }
 
 section.dark-2 {
@@ -360,7 +360,6 @@ img.social {
 img.social:hover {
 	opacity: 100%;
 }
-
 
 img.picture {
 	margin: 1vmin;
