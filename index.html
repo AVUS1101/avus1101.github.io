@@ -8,29 +8,55 @@
 	<meta name="keywords" content="avus, c_e, art, animation, music">
 	<meta name="description" content="Avus Inc. landing page">
 	<title>Avus</title>
-
 	<link rel="home" title="Home" href="index.html">
 	<link rel="next" title="Next" href="c_e.html">
-
-	<!-- <link rel="stylesheet" href="styles.css"> -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=block" rel="stylesheet">
-	<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=block" rel="stylesheet"> -->
-
 	<style>
 		:root {
 			--bg-dark1: rgb(5, 8, 11);
 			--bg-dark2: rgb(18, 19, 22);
+			--btg-pink: rgb(232, 152, 216);
+			--btg-yellow: rgb(255, 246, 139);
 		}
 
 		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			padding: 0%;
 			margin: 0%;
 		}
 
-		@keyframes phase {
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		@font-face {
+			font-family: architectural_expanded;
+			src: url(fonts/architectural_medium_expanded.woff);
+		}
+
+		@font-face {
+			font-family: cinzel;
+			src: url(fonts/cinzel.woff2);
+		}
+
+		@font-face {
+			font-family: montserrat_thin;
+			src: url(fonts/montserrat_thin.woff2);
+		}
+
+		@font-face {
+			font-family: vinston;
+			src: url(fonts/vinston.woff2);
+		}
+
+		@font-face {
+			font-family: wintersoul;
+			src: url(fonts/wintersoul.woff);
+		}
+
+		@keyframes logo-phase {
 			0% {
 				opacity: 0
 			}
@@ -40,18 +66,8 @@
 			}
 		}
 
-		@keyframes aberration1 {
-			0% {
-				transform: scale(1);
-			}
-
-			100% {
-				transform: scale(0.9);
-			}
-		}
-
-		.phase {
-			animation-name: phase;
+		.logo-phase {
+			animation-name: logo-phase;
 			animation-play-state: running;
 			animation-duration: 1s;
 			animation-direction: alternate;
@@ -59,116 +75,182 @@
 			animation-timing-function: ease-in-out;
 		}
 
-		section {
-			padding: 5vmin;
-		}
-
-		section.dark1 {
-			background-color: var(--bg-dark1);
-		}
-
-		section.dark2 {
-			background-color: var(--bg-dark2);
+		svg {
+			filter: blur(1px);
 		}
 
 		footer {
-			padding: 1vmin;
+			font-family: sans-serif;
+			font-size: 5vmin;
+			position: absolute;
 			bottom: 0%;
-			right: 0%;
-			position: fixed;
+			width: 100%;
+			text-align: center;
+			color: gray;
+			filter: blur(20px);
+			transition: filter 1s ease;
 		}
 
-		a {
-			text-decoration: none;
+		footer:hover {
+			color: gray;
+			filter: blur(1px);
 		}
 
 		h1 {
-			font-family: 'Montserrat', sans-serif;
-			font-size: 10vmin;
-			font-weight: 100;
 			text-align: center;
+			line-height: 20vmin;
 			color: white;
 		}
 
-		h1.red1 {
-			animation: aberration1 3s ease-in-out 0s infinite alternate both;
-			mix-blend-mode: lighten;
-			color: #ff0000;
+		h1.c_e {
+			flex: 1;
+			font-family: 'montserrat_thin';
+			font-size: 10vmin;
+			position: relative;
+			color: white;
+			mix-blend-mode: screen;
+			transition: transform 0.5s ease, filter 0.5s ease;
+			filter: blur(0.5px);
 		}
 
-		h1.green1 {
-			animation: aberration1 4s ease-in-out 0s infinite alternate both;
-			mix-blend-mode: lighten;
-			color: #00ff00;
+		a.c_e:hover h1.c_e.r {
+			transform: scale(95%);
+			filter: blur(1px);
 		}
 
-		h1.blue1 {
-			animation: aberration1 5s ease-in-out 0s infinite alternate both;
-			mix-blend-mode: lighten;
-			color: #0000ff;
+		a.c_e:hover h1.c_e.g {
+			transform: scale(105%);
+			filter: blur(4px);
 		}
 
-		h2 {
-			font-family: 'Montserrat', sans-serif;
-			font-size: 2vmin;
-			font-weight: 400;
-			text-align: center;
-			color: gray;
+		a.c_e:hover h1.c_e.b {
+			transform: scale(115%);
+			filter: blur(2px);
+		}
+
+		video.c_e {
+			filter: saturate(0);
+			transition: filter 4s ease;
+		}
+
+		a.c_e:hover video.c_e {
+			filter: saturate(1);
+		}
+
+		img.lockbone {
+			object-fit: contain;
+		}
+
+		div.lockbone:hover img.lockbone {
+			object-fit: cover;
+		}
+
+		h1.lockbone {
+			flex: 1;
+			font-family: 'architectural_expanded';
+			font-size: 10vmin;
+			position: relative;
+			top: -100%;
+			filter: blur(0.1vmin);
+			color: white;
+			text-shadow:
+				0 0 7px var(--btg-pink),
+				0 0 10px var(--btg-pink),
+				0 0 20px var(--btg-pink),
+				0 0 40px var(--btg-pink),
+				0 0 80px var(--btg-pink),
+				0 0 90px var(--btg-pink),
+				0 0 100px var(--btg-pink),
+				0 0 150px var(--btg-pink);
+			transition: text-shadow 0.5s ease;
+		}
+
+		div.lockbone:hover h1.lockbone {
+			text-shadow:
+				0 0 7px var(--btg-yellow),
+				0 0 10px var(--btg-yellow),
+				0 0 20px var(--btg-yellow),
+				0 0 40px var(--btg-yellow),
+				0 0 80px var(--btg-yellow),
+				0 0 90px var(--btg-yellow),
+				0 0 100px var(--btg-yellow),
+				0 0 150px var(--btg-yellow);
 		}
 
 	</style>
 </head>
 
 <body style="background-color: var(--bg-dark1);">
-	<svg viewBox="0 0 100 100" width="25vmin" style="filter: blur(1px); display: block; margin: auto;">
-		<g fill="#fff" style="shape-rendering: crispEdges;">
-			<polygon points="0 100, 50 0, 100 100, 95 100, 50 10, 5 100" class="phase" style="animation-delay: -1.3s;" />
-			<polygon points="5 100, 50 10, 95 100, 90 100, 50 20, 10 100" class="phase" style="animation-delay: -1.1s;" />
-			<polygon points="10 100, 50 20, 90 100, 85 100, 50 30, 15 100" class="phase" style="animation-delay: -1.5s;" />
-			<polygon points="15 100, 50 30, 85 100, 80 100, 50 40, 20 100" class="phase" style="animation-delay: +0.1s;" />
-			<polygon points="20 100, 50 40, 80 100, 75 100, 50 50, 25 100" class="phase" style="animation-delay: +0.5s;" />
-			<polygon points="25 100, 50 50, 75 100, 70 100, 50 60, 30 100" class="phase" style="animation-delay: -0.1s;" />
-			<polygon points="30 100, 50 60, 70 100, 65 100, 50 70, 35 100" class="phase" style="animation-delay: +0.3s;" />
-			<polygon points="35 100, 50 70, 65 100, 60 100, 50 80, 40 100" class="phase" style="animation-delay: +0.7s;" />
-			<polygon points="40 100, 50 80, 60 100, 55 100, 50 90, 45 100" class="phase" style="animation-delay: +0.9s;" />
-		</g>
-	</svg>
-
-	<section class="dark2">
-		<a target="_blank" rel="noreferrer" href="c_e.html">
-			<h1 class="blue1" style="position: absolute; left: 50%; margin-left: -10vmin;">C_E</h1>
-			<h1 class="red1" style="position: absolute; left: 50%; margin-left: -10vmin;">C_E</h1>
-			<h1 class="green1" style="position: absolute; left: 50%; margin-left: -10vmin;">C_E</h1>
-			<h1 style="color: transparent">C_E</h1>
+	<div style="background-image: linear-gradient(180deg, var(--bg-dark1) 50%, var(--bg-dark2) 50%); background-size: 10px 40vmin; background-repeat: repeat; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;">
+		<svg viewBox="0 0 100 100" style="height: 20vmin;">
+			<g fill="#fff" style="shape-rendering: crispEdges;">
+				<polygon points="0 100, 50 0, 100 100, 95 100, 50 10, 5 100" class="logo-phase" style="animation-delay: -1.3s;" />
+				<polygon points="5 100, 50 10, 95 100, 90 100, 50 20, 10 100" class="logo-phase" style="animation-delay: -1.1s;" />
+				<polygon points="10 100, 50 20, 90 100, 85 100, 50 30, 15 100" class="logo-phase" style="animation-delay: -1.5s;" />
+				<polygon points="15 100, 50 30, 85 100, 80 100, 50 40, 20 100" class="logo-phase" style="animation-delay: +0.1s;" />
+				<polygon points="20 100, 50 40, 80 100, 75 100, 50 50, 25 100" class="logo-phase" style="animation-delay: +0.5s;" />
+				<polygon points="25 100, 50 50, 75 100, 70 100, 50 60, 30 100" class="logo-phase" style="animation-delay: -0.1s;" />
+				<polygon points="30 100, 50 60, 70 100, 65 100, 50 70, 35 100" class="logo-phase" style="animation-delay: +0.3s;" />
+				<polygon points="35 100, 50 70, 65 100, 60 100, 50 80, 40 100" class="logo-phase" style="animation-delay: +0.7s;" />
+				<polygon points="40 100, 50 80, 60 100, 55 100, 50 90, 45 100" class="logo-phase" style="animation-delay: +0.9s;" />
+			</g>
+		</svg>
+		<a class="c_e" target="_blank" rel="noreferrer" href="c_e.html" style="height: 20vmin; text-decoration: none; overflow: hidden;">
+			<video class="c_e" src="videos/sun.webm" playsinline autoplay muted loop style="width: 100vw; height: 20vmin; object-fit: cover;"></video>
+			<h1 class="c_e r" style="color: rgba(255, 0, 0, 1); text-shadow: 0 0 7px rgba(255, 0, 0, 1); top: -100%;">C_E</h1>
+			<h1 class="c_e g" style="color: rgba(0, 255, 0, 1); text-shadow: 0 0 7px rgba(0, 255, 0, 1); top: -200%;">C_E</h1>
+			<h1 class="c_e b" style="color: rgba(0, 0, 255, 1); text-shadow: 0 0 7px rgba(0, 0, 255, 1); top: -300%;">C_E</h1>
 		</a>
-	</section>
-
-	<section class="dark1"
-		style="background-image: url(images/boogie.gif); background-size: contain; background-position: center; background-repeat: no-repeat;">
-		<a target="_blank" rel="noreferrer" href="lockbone.html">
-			<h1>Lockbone</h1>
+		<a target="_blank" rel="noreferrer" href="lockbone.html" style="width: 100vmin; height: 20vmin; display: flex; flex-flow: row nowrap; text-decoration: none;">
+			<div class="lockbone" style="flex: 1;">
+				<img class="lockbone" src='https://i.imgur.com/9SAD35N.gif' />
+				<h1 class="lockbone">L</h1>
+			</div>
+			<div class="lockbone" style="flex: 1;">
+				<img class="lockbone" src='https://i.imgur.com/9SAD35N.gif' />
+				<h1 class="lockbone">o</h1>
+			</div>
+			<div class="lockbone" style="flex: 1;">
+				<img class="lockbone" src='https://i.imgur.com/9SAD35N.gif' />
+				<h1 class="lockbone">c</h1>
+			</div>
+			<div class="lockbone" style="flex: 1;">
+				<img class="lockbone" src='https://i.imgur.com/9SAD35N.gif' />
+				<h1 class="lockbone">k</h1>
+			</div>
+			<div class="lockbone" style="flex: 1;">
+				<img class="lockbone" src='https://i.imgur.com/9SAD35N.gif' />
+				<h1 class="lockbone">b</h1>
+			</div>
+			<div class="lockbone" style="flex: 1;">
+				<img class="lockbone" src='https://i.imgur.com/9SAD35N.gif' />
+				<h1 class="lockbone">o</h1>
+			</div>
+			<div class="lockbone" style="flex: 1;">
+				<img class="lockbone" src='https://i.imgur.com/9SAD35N.gif' />
+				<h1 class="lockbone">n</h1>
+			</div>
+			<div class="lockbone" style="flex: 1;">
+				<img class="lockbone" src='https://i.imgur.com/9SAD35N.gif' />
+				<h1 class="lockbone">e</h1>
+			</div>
+			<!-- <h1 style="flex 2; font-family: 'wintersoul'; font-size: 10vmin;">Lockbone</h1> -->
 		</a>
-	</section>
-
-	<div style="background-color: var(--bg-dark2);">
-		<svg viewBox="0 0 100 100" width="25vmin" style="filter: blur(1px); display: block; margin: auto;">
+		<svg viewBox="0 0 100 100" style="height: 20vmin;">
 			<g fill="#fff" style="transform: translateY(100%) scaleY(-1); shape-rendering: crispEdges;">
-				<polygon points="0 100, 50 0, 100 100, 95 100, 50 10, 5 100" class="phase" style="animation-delay: -1.3s;" />
-				<polygon points="5 100, 50 10, 95 100, 90 100, 50 20, 10 100" class="phase" style="animation-delay: -1.1s;" />
-				<polygon points="10 100, 50 20, 90 100, 85 100, 50 30, 15 100" class="phase" style="animation-delay: -1.5s;" />
-				<polygon points="15 100, 50 30, 85 100, 80 100, 50 40, 20 100" class="phase" style="animation-delay: +0.1s;" />
-				<polygon points="20 100, 50 40, 80 100, 75 100, 50 50, 25 100" class="phase" style="animation-delay: +0.5s;" />
-				<polygon points="25 100, 50 50, 75 100, 70 100, 50 60, 30 100" class="phase" style="animation-delay: -0.1s;" />
-				<polygon points="30 100, 50 60, 70 100, 65 100, 50 70, 35 100" class="phase" style="animation-delay: +0.3s;" />
-				<polygon points="35 100, 50 70, 65 100, 60 100, 50 80, 40 100" class="phase" style="animation-delay: +0.7s;" />
-				<polygon points="40 100, 50 80, 60 100, 55 100, 50 90, 45 100" class="phase" style="animation-delay: +0.9s;" />
+				<polygon points="0 100, 50 0, 100 100, 95 100, 50 10, 5 100" class="logo-phase" style="animation-delay: -1.3s;" />
+				<polygon points="5 100, 50 10, 95 100, 90 100, 50 20, 10 100" class="logo-phase" style="animation-delay: -1.1s;" />
+				<polygon points="10 100, 50 20, 90 100, 85 100, 50 30, 15 100" class="logo-phase" style="animation-delay: -1.5s;" />
+				<polygon points="15 100, 50 30, 85 100, 80 100, 50 40, 20 100" class="logo-phase" style="animation-delay: +0.1s;" />
+				<polygon points="20 100, 50 40, 80 100, 75 100, 50 50, 25 100" class="logo-phase" style="animation-delay: +0.5s;" />
+				<polygon points="25 100, 50 50, 75 100, 70 100, 50 60, 30 100" class="logo-phase" style="animation-delay: -0.1s;" />
+				<polygon points="30 100, 50 60, 70 100, 65 100, 50 70, 35 100" class="logo-phase" style="animation-delay: +0.3s;" />
+				<polygon points="35 100, 50 70, 65 100, 60 100, 50 80, 40 100" class="logo-phase" style="animation-delay: +0.7s;" />
+				<polygon points="40 100, 50 80, 60 100, 55 100, 50 90, 45 100" class="logo-phase" style="animation-delay: +0.9s;" />
 			</g>
 		</svg>
 	</div>
-
-	<footer>
-		<h2>Λ ∀</h2>
-	</footer>
+	<footer>Λ∀</footer>
 </body>
 
 </html>
