@@ -11,21 +11,135 @@
 	<link rel="home" title="Home" href="index.html">
 	<link rel="next" title="Next" href="index.html">
 	<style>
+		:root {
+			--bg-dark1: rgb(5, 8, 11);
+			--bg-dark2: rgb(18, 19, 22);
+			--btg-pink: rgb(232, 152, 216);
+			--btg-yellow: rgb(255, 246, 139);
+		}
+
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 0%;
+			margin: 0%;
+		}
+
 		@font-face {
 			font-family: vinston;
 			src: url(fonts/vinston.woff2);
 		}
 
+		@media (hover: hover) {
+			.highlight {
+				text-align: center;
+				font-family: 'vinston';
+				font-size: 30vmin;
+				flex: 1;
+				color: var(--bg-dark2);
+			}
+
+			.highlight.p:hover {
+				color: var(--btg-pink);
+			}
+
+			.highlight.y:hover {
+				color: var(--btg-yellow);
+			}
+
+			.invert {
+				width: 33vmin;
+				flex: 1;
+				object-fit: contain;
+				position: relative;
+				top: 7%;
+				mix-blend-mode: luminosity;
+				border-radius: 1vmin;
+				opacity: 7%;
+			}
+
+			.invert:hover {
+				mix-blend-mode: normal;
+				opacity: 100%;
+			}
+		}
+
+		@media (hover: none) {
+			.highlight {
+				text-align: center;
+				font-family: 'vinston';
+				font-size: 30vmin;
+				flex: 1;
+			}
+
+			@keyframes highlight-color-p {
+				0% {
+					color: var(--bg-dark2);
+				}
+
+				80% {
+					color: var(--bg-dark2);
+				}
+
+				100% {
+					color: var(--btg-pink);
+				}
+			}
+
+			@keyframes highlight-color-y {
+				0% {
+					color: var(--bg-dark2);
+				}
+
+				80% {
+					color: var(--bg-dark2);
+				}
+
+				100% {
+					color: var(--btg-yellow);
+				}
+			}
+
+			.highlight.p {
+				animation: 0.4s step-start 0s infinite alternate both running highlight-color-p;
+			}
+
+			.highlight.y {
+				animation: 0.4s step-start 0s infinite alternate both running highlight-color-y;
+			}
+
+			.invert {
+				width: 33vmin;
+				flex: 1;
+				object-fit: contain;
+				position: relative;
+				top: 7%;
+				mix-blend-mode: normal;
+				border-radius: 1vmin;
+				opacity: 100%;
+			}
+		}
+
 	</style>
 </head>
 
-<body style="background-color: white; width:100vw; height:100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-	<img src="images/404.gif" style="width: max-content;">
-	<div style="width:100vw; height:100vh; display: flex; align-items: center; justify-content: space-between; position: absolute; overflow: hidden;">
-		<div style="text-align: center; font-family: 'vinston'; font-size: 30vmin; color: rgba(0, 0, 0, 0.05); align-self: flex-start;">4</div>
-		<div style="text-align: center; font-family: 'vinston'; font-size: 30vmin; color: rgba(0, 0, 0, 0.05);">0</div>
-		<div style="text-align: center; font-family: 'vinston'; font-size: 30vmin; color: rgba(0, 0, 0, 0.05); align-self: flex-end;">4</div>
+<body style="background-color: var(--bg-dark1); margin: 0%; width:100vw; height:100vh; display: flex; flex-flow: row nowrap; align-items: center; justify-content: center; overflow: hidden;">
+	<div style="width:100vmin; height:100vmin; display: flex; flex-flow: row wrap; overflow: hidden;">
+		<div class="highlight y" style="animation-delay: 0.1s">4</div>
+		<div class="highlight p" style="animation-delay: 0.2s">0</div>
+		<div class="highlight y" style="animation-delay: 0.3s">4</div>
+		<div class="highlight p" style="animation-delay: 0.8s">0</div>
+		<div>
+			<img class="invert" src="images/404.gif">
+		</div>
+		<div class="highlight p" style="animation-delay: 0.4s">0</div>
+		<div class="highlight y" style="animation-delay: 0.7s">4</div>
+		<div class="highlight p" style="animation-delay: 0.6s">0</div>
+		<div class="highlight y" style="animation-delay: 0.5s">4</div>
 	</div>
 </body>
+<!-- <body style="background-color: white; width:100vw; height:100vh;">
+</body> -->
 
 </html>
