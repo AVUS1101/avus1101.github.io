@@ -6,208 +6,86 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Christian Erickson [C_E]">
 	<meta name="keywords" content="avus, c_e, art, animation, music">
-	<meta name="description" content="Avus Inc.">
+	<meta name="description" content="C_E landing page">
 	<title>Avus | Christian Erickson</title>
-	<!-- <title>Avus | C_E - Animations</title> -->
+	<link rel="home" title="Home" href="../index.html">
+	<link rel="prev" title="Previous" href="../index.html">
+	<style>
+		:root {
+			--bg-dark1: rgb(5, 8, 11);
+			--bg-dark2: rgb(18, 19, 22);
+		}
 
-	<link rel="home" title="Home" href="index.html">
-	<link rel="prev" title="Previous" href="index.html">
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 0%;
+			margin: 0%;
+		}
 
-	<link rel="stylesheet" href="styles.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=block" rel="stylesheet">
-	<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=block" rel="stylesheet"> -->
+		@font-face {
+			font-family: montserrat_thin;
+			src: url(../fonts/montserrat_thin.woff2);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		@keyframes logo-phase {
+			0% {
+				opacity: 0
+			}
+
+			100% {
+				opacity: 1
+			}
+		}
+
+		.logo-phase {
+			animation: 1s ease-in-out 0s alternate infinite logo-phase;
+		}
+
+		footer {
+			font-family: sans-serif;
+			font-size: 5vmin;
+			color: gray;
+			filter: blur(1.5vmin);
+			transition: filter 1s ease;
+		}
+
+		@media (hover: hover) {
+			footer:hover {
+				filter: blur(0.05vmin);
+			}
+		}
+
+		@media (hover: none) {
+			footer:active {
+				filter: blur(0.05vmin);
+			}
+		}
+
+	</style>
 </head>
 
-<body class="dark">
-	<button class="theme" id="button-switch-theme" type="button" onclick="switchTheme()">🌚</button>
-
-	<header>
-		<a target="_blank" rel="noreferrer" href="skull.html">
-			<button style="cursor: pointer;" class="logo" type="button">
-				<img id="button-logo-small" src="images/avus_512.png" alt="">
-			</button>
-		</a>
-		<!-- FIX(C_E): No style attributes in html -->
-		<h1 onclick="cycleLogoAnimation()" style="position: relative; left: 50%; transform: translate(-50%, 0%); color: transparent">C_E</h1>
-		<!-- CHECK(C_E): Use title instead of logo? -->
-		<h1 onclick="cycleLogoAnimation()" id="logo-main-red" class="red-a6 dark red-dark">C_E</h1>
-		<h1 onclick="cycleLogoAnimation()" id="logo-main-green" class="green-a6 dark green-dark">C_E</h1>
-		<h1 onclick="cycleLogoAnimation()" id="logo-main-blue" class="blue-a6 dark blue-dark">C_E</h1>
-	</header>
-
-	<section class="dark-1">
-		<h2 class="dark">Animations</h2>
-		<iframe class="youtube dark" allowfullscreen src="https://www.youtube.com/embed/02a-LFcxJHs?modestbranding=1&rel=0">
-		</iframe>
-		<iframe class="youtube dark" allowfullscreen src="https://www.youtube.com/embed/OrBsZTEbHXg?modestbranding=1&rel=0">
-		</iframe>
-	</section>
-
-	<section class="dark-2">
-		<h2 class="dark">Music</h2>
-		<iframe class="soundcloud dark"
-			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1272896140&visual=true&hide_related=true&show_teaser=false"></iframe>
-		<iframe class="soundcloud dark"
-			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1272896656&visual=true&hide_related=true&show_teaser=false"></iframe>
-		<iframe class="soundcloud dark"
-			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1272900109&visual=true&hide_related=true&show_teaser=false"></iframe>
-		<iframe class="soundcloud dark"
-			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1267416727&visual=true&hide_related=true&show_teaser=false"></iframe>
-		<iframe class="soundcloud dark"
-			src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1272883249&visual=true&hide_related=true&show_teaser=false"></iframe>
-	</section>
-
-	<section class="dark-1">
-		<h2 class="dark">Pictures</h2>
-		<a target="_blank" rel="noreferrer" href="https://twitter.com/DisturbTheBirds/status/1523735591241740288">
-			<img class="picture dark" src="https://pbs.twimg.com/media/FSVlNQOVgAEiFA0?format=jpg&name=small" alt="">
-			<img class="picture dark" src="https://pbs.twimg.com/media/FSVlZCcUUAAM831?format=jpg&name=small" alt="">
-		</a>
-		<a target="_blank" rel="noreferrer" href="https://twitter.com/DisturbTheBirds/status/1523735626364772352">
-			<img class="picture dark" src="https://pbs.twimg.com/media/FSVld2lVkAAxHWm?format=jpg&name=small" alt="">
-			<img class="picture dark" src="https://pbs.twimg.com/media/FSVld3WUUAA81Uc?format=jpg&name=small" alt="">
-		</a>
-		<a target="_blank" rel="noreferrer" href="https://twitter.com/DisturbTheBirds/status/1524265375822610434">
-			<img class="picture dark" src="https://pbs.twimg.com/media/FSdHQt4VIAEVp8d?format=jpg&name=small" alt="">
-			<img class="picture dark" src="https://pbs.twimg.com/media/FSdHRZkVcAEvptg?format=jpg&name=small" alt="">
-		</a>
-	</section>
-
-	<footer class="dark-2">
-		<h2 class="dark">Christian Erickson</h2>
-		<img id="button-logo-big" style="width: 10vmin;" src="images/avus_512.png" alt="Avus Logo">
-		<a title="Twitter" target="_blank" rel="noreferrer" href="https://twitter.com/DisturbTheBirds">
-			<img class="social" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg" alt="Twitter Link">
-		</a>
-		<a title="YouTube" target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UC2OrV8jUtdJmtpIDW2zsXZQ">
-			<img class="social" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube Link">
-		</a>
-		<a title="SoundCloud" target="_blank" rel="noreferrer" href="https://soundcloud.com/christian_erickson">
-			<img class="social" src="https://cdn.cdnlogo.com/logos/s/28/soundcloud-icon.svg" alt="SoundCloud Link">
-		</a>
-		<a title="Vimeo" target="_blank" rel="noreferrer" href="https://vimeo.com/cdte">
-			<img class="social" src="https://cdn.cdnlogo.com/logos/v/5/vimeo-icon-blue.svg" alt="Vimeo Link">
-		</a>
-		<a title="Dribbble" target="_blank" rel="noreferrer" href="https://dribbble.com/C__E">
-			<img class="social" src="https://cdn.cdnlogo.com/logos/d/56/dribbble-icon.svg" alt="Dribbble Link">
-		</a>
-		<a title="LinkedIn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/cdte">
-			<img class="social" src="https://cdn.cdnlogo.com/logos/l/66/linkedin-icon.svg" alt="LinkedIn Link">
-		</a>
-	</footer>
-
-	<script>
-		function cycleLogoAnimation() {
-			do {
-				if (document.getElementById("logo-main-red").classList.replace("red-a1", "red-a2")) break;
-				if (document.getElementById("logo-main-red").classList.replace("red-a2", "red-a3")) break;
-				if (document.getElementById("logo-main-red").classList.replace("red-a3", "red-a4")) break;
-				if (document.getElementById("logo-main-red").classList.replace("red-a4", "red-a5")) break;
-				if (document.getElementById("logo-main-red").classList.replace("red-a5", "red-a6")) break;
-				if (document.getElementById("logo-main-red").classList.replace("red-a6", "red-a1")) break;
-			} while (0);
-			do {
-				if (document.getElementById("logo-main-green").classList.replace("green-a1", "green-a2")) break;
-				if (document.getElementById("logo-main-green").classList.replace("green-a2", "green-a3")) break;
-				if (document.getElementById("logo-main-green").classList.replace("green-a3", "green-a4")) break;
-				if (document.getElementById("logo-main-green").classList.replace("green-a4", "green-a5")) break;
-				if (document.getElementById("logo-main-green").classList.replace("green-a5", "green-a6")) break;
-				if (document.getElementById("logo-main-green").classList.replace("green-a6", "green-a1")) break;
-			} while (0);
-			do {
-				if (document.getElementById("logo-main-blue").classList.replace("blue-a1", "blue-a2")) break;
-				if (document.getElementById("logo-main-blue").classList.replace("blue-a2", "blue-a3")) break;
-				if (document.getElementById("logo-main-blue").classList.replace("blue-a3", "blue-a4")) break;
-				if (document.getElementById("logo-main-blue").classList.replace("blue-a4", "blue-a5")) break;
-				if (document.getElementById("logo-main-blue").classList.replace("blue-a5", "blue-a6")) break;
-				if (document.getElementById("logo-main-blue").classList.replace("blue-a6", "blue-a1")) break;
-			} while (0);
-		}
-
-		function switchTheme() {
-			if (document.body.classList.contains("dark")) {
-				document.body.classList.add("light");
-				document.body.classList.remove("dark");
-
-				document.getElementById("button-logo-small").src = "images/avus_inv_512.png";
-				document.getElementById("button-logo-big").src = "images/avus_inv_512.png";
-				document.getElementById("button-switch-theme").textContent = "🌞";
-
-				let elements = document.getElementsByClassName("dark");
-				for (; elements.length;) {
-					elements[0].classList.add("light");
-					elements[0].classList.remove("dark");
-				}
-				elements = document.getElementsByClassName("dark-1");
-				for (; elements.length;) {
-					elements[0].classList.add("light-1");
-					elements[0].classList.remove("dark-1");
-				}
-				elements = document.getElementsByClassName("dark-2");
-				for (; elements.length;) {
-					elements[0].classList.add("light-2");
-					elements[0].classList.remove("dark-2");
-				}
-				elements = document.getElementsByClassName("red-dark");
-				for (; elements.length;) {
-					elements[0].classList.add("red-light");
-					elements[0].classList.remove("red-dark");
-				}
-				elements = document.getElementsByClassName("green-dark");
-				for (; elements.length;) {
-					elements[0].classList.add("green-light");
-					elements[0].classList.remove("green-dark");
-				}
-				elements = document.getElementsByClassName("blue-dark");
-				for (; elements.length;) {
-					elements[0].classList.add("blue-light");
-					elements[0].classList.remove("blue-dark");
-				}
-			}
-			else {
-				document.body.classList.add("dark");
-				document.body.classList.remove("light");
-
-				document.getElementById("button-logo-small").src = "images/avus_512.png";
-				document.getElementById("button-logo-big").src = "images/avus_512.png";
-				document.getElementById("button-switch-theme").textContent = "🌚";
-
-				let elements = document.getElementsByClassName("light");
-				for (; elements.length;) {
-					elements[0].classList.add("dark");
-					elements[0].classList.remove("light");
-				}
-				elements = document.getElementsByClassName("light-1");
-				for (; elements.length;) {
-					elements[0].classList.add("dark-1");
-					elements[0].classList.remove("light-1");
-				}
-				elements = document.getElementsByClassName("light-2");
-				for (; elements.length;) {
-					elements[0].classList.add("dark-2");
-					elements[0].classList.remove("light-2");
-				}
-				elements = document.getElementsByClassName("red-light");
-				for (; elements.length;) {
-					elements[0].classList.add("red-dark");
-					elements[0].classList.remove("red-light");
-				}
-				elements = document.getElementsByClassName("green-light");
-				for (; elements.length;) {
-					elements[0].classList.add("green-dark");
-					elements[0].classList.remove("green-light");
-				}
-				elements = document.getElementsByClassName("blue-light");
-				for (; elements.length;) {
-					elements[0].classList.add("blue-dark");
-					elements[0].classList.remove("blue-light");
-				}
-			}
-		}
-	</script>
-
+<body style="background-color: var(--bg-dark1); min-height: 100vh; display: flex; flex-flow: column; align-items: center; justify-content: space-between;">
+	<div style="background-image: linear-gradient(180deg, var(--bg-dark1) 50%, var(--bg-dark2) 50%); background-size: 100vw 40vmin; background-repeat: repeat; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+		<svg style="width: fit-content; height: 20vmin;">
+			<use xlink:href="#c_e-logo"></use>
+		</svg>
+	</div>
+	<footer>Λ∀</footer>
 </body>
+<svg style="display: none;">
+	<symbol id="c_e-logo" viewBox="0 0 200 100" stroke="white" fill="none" stroke-width="0.25vmin">
+		<path d="M 75 25 A 40 40 0 1 0 75 75" />
+		<path d="M 75 99 h 50" />
+		<path d="M 185 10 h -50 v 80 h 50" />
+		<path d="M 135 50 h 40" />
+	</symbol>
+</svg>
 
 </html>
